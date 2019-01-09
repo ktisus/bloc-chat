@@ -12,14 +12,15 @@ class RoomList extends Component {
 
     componentDidMount () {
       this.roomsRef.on('child_added', snapshot => {
+      /*  console.log(snapshot);  to see what the snapshot object for each room */
         const room = snapshot.val();
         room.key = snapshot.key;
-      /*  console.log(snapshot); to see what the snapshot object for each room */
+
       /*  this.setState({ rooms: this.state.rooms.concat( snapshot.val() ) }); */
         this.setState({ rooms: this.state.rooms.concat( room ) })
       });
     }
-
+/* .concat(): either add items to an array or merge arrays, returns a new array without changing the existing array */
 
 
 render() {

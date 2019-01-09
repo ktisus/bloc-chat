@@ -21,8 +21,11 @@ import RoomList from './components/RoomList';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <RoomList firebase={ firebase } />
+        <div className="App">
+        <header>
+          <h1> Bloc Chat </h1>
+          <RoomList firebase={ firebase } />
+        </header>
       </div>
     );
   }
