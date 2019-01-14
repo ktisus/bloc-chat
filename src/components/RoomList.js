@@ -40,9 +40,10 @@ render() {
       <section>
         <h1> Bloc Chat </h1>
           <section className="room-list">
-            {this.state.rooms.map( room =>
-                <li key={room.key} >
-                  <button className="room-name">{room.name}</button>
+            {this.state.rooms.map( (room, index) =>
+                <li key={index} onClick = { () => this.props.setRoom(room) } >
+                {room.name}
+                
                 </li>
             )}
           </section>
@@ -55,7 +56,7 @@ render() {
                      name='newRoomName'
                      value={ this.state.newRoomName }
                      onChange={this.handleChange.bind(this)}
-                     placeholder='Create a new room' />
+                     placeholder='Enter a new room' />
             </label>
             <button type='submit' value='Submit'> Submit </button>
           </form>
