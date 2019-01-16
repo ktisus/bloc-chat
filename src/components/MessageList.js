@@ -32,7 +32,11 @@ class MessageList extends Component {
     this.setState ({ newMessageName: e.target.value });
   }
 
-  
+
+  handleChange(e) {
+    this.setState({ newMessageName: e.target.value });
+  }
+
   render() {
     return (
       (this.props.activeRoom !== '') ?
